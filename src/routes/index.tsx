@@ -8,6 +8,7 @@ import healthcare from "@/assets/healthcare.jpg";
 import heroObjects from "@/assets/hero-objects.png";
 import craft from "@/assets/about-craft.jpg";
 import { SectionHeading } from "@/components/site/PageShell";
+import { CtaBand } from "@/components/site/SiteFooter";
 import {
   CountUp,
   Magnetic,
@@ -94,12 +95,20 @@ const industries = [
   {
     name: "Healthcare",
     body: "EHR systems, telemedicine, medical imaging and patient management built to regulation.",
-    points: ["Electronic Health Records", "Telemedicine platforms", "Medical imaging & diagnostics"],
+    points: [
+      "Electronic Health Records",
+      "Telemedicine platforms",
+      "Medical imaging & diagnostics",
+    ],
   },
   {
     name: "Education",
     body: "Learning management, virtual classrooms and student information systems that teachers enjoy.",
-    points: ["Learning management systems", "Virtual classroom platforms", "Educational mobile apps"],
+    points: [
+      "Learning management systems",
+      "Virtual classroom platforms",
+      "Educational mobile apps",
+    ],
   },
   {
     name: "Logistics",
@@ -182,7 +191,10 @@ function Home() {
   return (
     <div className="overflow-x-clip">
       {/* Hero */}
-      <section ref={heroRef} className="relative min-h-[92vh] overflow-hidden bg-dawn px-6 pt-40 pb-28">
+      <section
+        ref={heroRef}
+        className="relative min-h-[92vh] overflow-hidden bg-dawn px-6 pt-40 pb-28"
+      >
         <div
           aria-hidden
           className="pointer-events-none absolute -left-32 top-20 size-[30rem] rounded-full bg-blush/50 blur-3xl drift"
@@ -427,8 +439,8 @@ function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
-                Founded in 2017, we help companies across 40+ domains reach their business goals with
-                software that is a pleasure to use and a pleasure to maintain.
+                Founded in 2017, we help companies across 40+ domains reach their business goals
+                with software that is a pleasure to use and a pleasure to maintain.
               </p>
             </Reveal>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -510,6 +522,8 @@ function Home() {
           </Reveal>
         </div>
       </section>
+
+      <CtaBand />
     </div>
   );
 }

@@ -31,7 +31,10 @@ export function SiteHeader() {
       className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-6"
     >
       <motion.nav
-        style={{ backdropFilter: useTransform(blur, (b) => `blur(${b}px) saturate(150%)`), boxShadow: shadow }}
+        style={{
+          backdropFilter: useTransform(blur, (b) => `blur(${b}px) saturate(150%)`),
+          boxShadow: shadow,
+        }}
         className="mx-auto flex max-w-6xl items-center justify-between gap-6 rounded-full border border-border/70 bg-card/70 px-5 py-3"
       >
         <Link to="/" className="group flex items-center gap-2">
@@ -74,7 +77,10 @@ export function SiteHeader() {
               className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors duration-500 hover:bg-primary"
             >
               Let&rsquo;s talk
-              <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">
+              <span
+                aria-hidden
+                className="transition-transform duration-500 group-hover:translate-x-1"
+              >
                 &rarr;
               </span>
             </Link>

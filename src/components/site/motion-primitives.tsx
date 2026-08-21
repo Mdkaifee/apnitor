@@ -48,7 +48,10 @@ export function RisingText({ text, className }: { text: string; className?: stri
   return (
     <span className={cn("inline-block", className)}>
       {words.map((word, i) => (
-        <span key={`${word}-${i}`} className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+        <span
+          key={`${word}-${i}`}
+          className="inline-block overflow-hidden pb-[0.08em] align-bottom"
+        >
           <motion.span
             className="inline-block"
             initial={{ y: "110%", opacity: 0 }}
@@ -177,8 +180,9 @@ export function CountUp({ value, suffix = "" }: { value: number; suffix?: string
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const spring = useSpring(0, { stiffness: 60, damping: 20 });
-  const rounded: MotionValue<string> = useTransform(spring, (latest) =>
-    `${Math.round(latest)}${suffix}`,
+  const rounded: MotionValue<string> = useTransform(
+    spring,
+    (latest) => `${Math.round(latest)}${suffix}`,
   );
 
   useEffect(() => {

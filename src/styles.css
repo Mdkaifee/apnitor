@@ -119,10 +119,10 @@
     color-mix(in oklab, white 32%, transparent)
   );
 
-  --shadow-float: 0 40px 80px -30px oklch(0.55 0.06 45 / 0.28),
-    0 12px 28px -18px oklch(0.4 0.04 45 / 0.18);
-  --shadow-lift: 0 24px 48px -22px oklch(0.55 0.06 45 / 0.22),
-    0 4px 12px -6px oklch(0.4 0.04 45 / 0.12);
+  --shadow-float:
+    0 40px 80px -30px oklch(0.55 0.06 45 / 0.28), 0 12px 28px -18px oklch(0.4 0.04 45 / 0.18);
+  --shadow-lift:
+    0 24px 48px -22px oklch(0.55 0.06 45 / 0.22), 0 4px 12px -6px oklch(0.4 0.04 45 / 0.12);
   --shadow-glass: 0 8px 32px oklch(0.6 0.04 50 / 0.12), inset 0 1px 0 oklch(1 0 0 / 0.6);
   --shadow-bloom: 0 30px 70px -20px oklch(0.68 0.113 42 / 0.35);
 
