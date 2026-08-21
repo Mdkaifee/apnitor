@@ -1,13 +1,14 @@
 import {
   motion,
   useInView,
+  useMotionTemplate,
   useMotionValue,
   useScroll,
   useSpring,
   useTransform,
   type MotionValue,
 } from "motion/react";
-import { useRef, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -87,6 +88,7 @@ export function TiltCard({
   });
   const sheenX = useTransform(px, [0, 1], ["0%", "100%"]);
   const sheenY = useTransform(py, [0, 1], ["0%", "100%"]);
+  const sheen = useMotionTemplate`radial-gradient(260px circle at ${sheenX} ${sheenY}, color-mix(in oklab, white 55%, transparent), transparent 70%)`;
 
   return (
     <motion.div
@@ -110,10 +112,7 @@ export function TiltCard({
       <motion.span
         aria-hidden
         className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(240px circle at ${sheenX.get()} ${sheenY.get()}, color-mix(in oklab, white 55%, transparent), transparent 70%)`,
-          x: 0,
-        }}
+        style={{ background: sheen }}
       />
     </motion.div>
   );
@@ -182,7 +181,9 @@ export function CountUp({ value, suffix = "" }: { value: number; suffix?: string
     `${Math.round(latest)}${suffix}`,
   );
 
-  if (inView) spring.set(value);
+  useEffect(() => {
+    if (inView) spring.set(value);
+  }, [inView, spring, value]);
 
   return (
     <span ref={ref} className="tabular-nums">
